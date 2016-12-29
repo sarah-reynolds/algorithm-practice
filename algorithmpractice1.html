@@ -1,0 +1,67 @@
+<script type="text/javascript">
+	
+// dateObject
+// ## Friday-the-Thirteens
+// Given a year as a number (ex: 2016), print the number of Friday-the-thirteens in that year. Read about how to construct dates closely to get ideas on how to implement this: 
+//  #date #loop #medium #math
+// SUPER BONUS How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+
+
+function friThirteensCount(year){
+	var sum = 0;
+	for(var i = 0; i < 12; i++){
+		var thisDate = new Date(year, i, 13);
+		var weekDay = thisDate.getDay();
+		if(weekDay === 5){
+				sum++
+			}
+		}
+	console.log(sum)
+}
+
+friThirteensCount(1996)
+
+
+// LEET SPEAK
+// Given a paragraph of text as a string, print the paragraph in leetspeak. To translate a string to leetspeak, you need to replace make the following character replacements (treat all input characters as uppercase):
+// A => 4
+// E => 3
+// G => 6
+// I => 1
+// O => 0
+// S => 5
+// T => 7
+// Example: Leet => l337
+// #string #loop #medium
+
+
+// (["A","4"], ["E","3"], ["G","6"], ["I","1"], ["O","0"], ["S","5"], ["T","7"]);
+
+var array1 = ["A", "E", "G", "I", "O", "S", "T"];
+var array2 = ["4", "3", "6", "1", "0", "5", "7"];
+
+// var a = "HERE IS MY PARAGRAPH TO TRANSLATE TO LEET SPEAK"
+// var b = a.replace(/TO/g, "2");
+// console.log(b);
+
+// var newArray = [];
+
+function leetSpeak(paragraph){
+	// var stringSplit = paragraph.split("");
+	// console.log(stringSplit)
+	var a = paragraph.toUpperCase()
+	for(var i = 0; i < array1.length; i++){
+		var reg = new RegExp(array1[i],"g");
+		var res = a.replace(reg, array2[i]);
+		a = res
+	}
+	console.log(a)
+
+	// var 
+	// console.log(translated);
+}
+
+leetSpeak("HERE IS MY PARAGRAPH TO TRANSLATE TO LEET SPEAK")
+
+
+</script>

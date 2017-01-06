@@ -1,0 +1,40 @@
+<!-- Case Convert
+Write a function caseConvert that accepts two arguments. The first is a string, the second is type. If the type is "camelcase" then convert the string to camelcase (each word except the first is capitalized, no spaces). If type is "snakecase" then convert the string to snakecase (each word is separated by a - and all lowercase). As a bonus, accept a string or an array. If it's an array, use .join and proceed accordingly. -->
+
+<script type="text/javascript">
+
+function caseConvert (string, conversionType){
+  var stringToArray = string.toLowerCase().split(" ");
+  if(conversionType === "camelcase"){
+    // console.log("Camel");
+    var firstWord = stringToArray[0];
+    var string = firstWord;
+    // console.log(stringToArray);
+    for(let i = 1; i < stringToArray.length; i++){
+     var firstLetter = stringToArray[i][0].toUpperCase();
+     var restOfString = stringToArray[i].slice(1, stringToArray[i].length);
+    // console.log(restOfString);
+    var camelWord = firstLetter + restOfString;
+    console.log(camelWord);
+    var convStr = string += camelWord;
+    // console.log(convStr);
+    }
+  }
+  if(conversionType === "snakecase"){
+    // console.log("Snake");
+    var convStr = '';
+    var lastWord = stringToArray[stringToArray.length-1];
+    console.log(lastWord);
+    for(let i = 0; i < stringToArray.length-1; i++){
+      var strings = stringToArray[i] + '-';
+      convStr += strings;
+    }
+    convStr += lastWord;
+  }
+  return(convStr)
+}
+
+caseConvert("Blah bLAH blaH blah Blah", "snakecase");
+
+
+</script>

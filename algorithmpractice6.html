@@ -1,0 +1,26 @@
+<!-- 
+Write a JavaScript program to compute the union of two arrays.
+console.log(union([1, 2, 3], [100, 2, 1, 10]));
+[1, 2, 3, 10, 100]
+ -->
+
+<script type="text/javascript">
+
+function union(arr1, arr2){
+  // console.log(arr1);
+  // console.log(arr2);
+  var newArr = arr1.concat(arr2);
+  // console.log(newArr);
+  return newArr.filter(function(currentValue, index, arr){
+    // console.log(currentValue);
+    return (index === arr.indexOf(currentValue))
+    
+  })
+}
+
+var arr1 = [1, 2, 3, 2, 2, 11, 12];
+var arr2 = [100, 2, 1, 10, 1, 100];
+
+union(arr1, arr2);
+
+</script>

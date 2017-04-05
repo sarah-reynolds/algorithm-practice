@@ -1,0 +1,46 @@
+<!-- 
+
+QUICK SORT
+
+ -->
+
+
+<script type="text/javascript">
+
+function quickSort(originalArray){
+  // if array has 0 or 1 indeces, sorting is complete
+  if (originalArray.length <= 1){
+    return originalArray
+  } else {
+    // set variables for empty arrays we will be pushing to
+    var left = [];
+    var right = [];
+    var newArray = [];
+    // remove last index and set it as the pivot value
+    var pivot = originalArray.pop();
+    // get length of the originalArray
+    var length = originalArray.length;
+    
+    // run for loop for the length of the originalArray
+    for (var i = 0; i < length; i++){
+      // if the i index in the originalArray is less than
+      // or equal to the pivot value, push to the left array
+      if (originalArray[i] <= pivot){
+        left.push(originalArray[i]);
+      // if the i index in the originalArray is greater than
+      // the pivot value, push to the right array
+      } else {
+        right.push(originalArray[i])
+      }
+    }
+    // return the concatenation of the left, array, the pivot, and the right array
+    // however, recursively quick sort the left and right arrays
+    return newArray.concat(quickSort(left), pivot, quickSort(right));
+  }
+}
+var myArray = [10, 4, 8, 3, -2, 22, 16]
+console.log("Original array: " + myArray);
+var sortedArray = quickSort(myArray);
+console.log("Sorted array: " + sortedArray);
+
+</script>

@@ -1,0 +1,31 @@
+<!-- 
+
+BUBBLE SORT
+
+ -->
+
+
+<script type="text/javascript">
+
+function swap(array, firstIndex, secondIndex){  
+    var temp = array[firstIndex];  
+    array[firstIndex] = array[secondIndex];  
+    array[secondIndex] = temp;  
+}  
+  
+function bubbleSort(array){  
+  
+    var length = array.length;
+    var stop;
+    for (var i=0; i < length; i++){  
+        for (var j=0, stop=length-i; j < stop; j++){  
+            if (array[j] > array[j+1]){  
+                swap(array, j, j+1);  
+            }  
+        }  
+    }  
+    return array;  
+}  
+console.log(bubbleSort([5, 1, 0, 15, -2, 3, 7]));
+
+</script>

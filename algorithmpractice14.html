@@ -7,25 +7,49 @@ BUBBLE SORT
 
 <script type="text/javascript">
 
-function swap(array, firstIndex, secondIndex){  
-    var temp = array[firstIndex];  
-    array[firstIndex] = array[secondIndex];  
-    array[secondIndex] = temp;  
-}  
+// function swap(array, firstIndex, secondIndex){  
+//     var temp = array[firstIndex];  
+//     array[firstIndex] = array[secondIndex];  
+//     array[secondIndex] = temp;  
+// }  
   
-function bubbleSort(array){  
+// function bubbleSort(array){  
   
-    var length = array.length;
-    var stop;
-    for (var i=0; i < length; i++){  
-        for (var j=0, stop=length-i; j < stop; j++){  
-            if (array[j] > array[j+1]){  
-                swap(array, j, j+1);  
-            }  
-        }  
-    }  
-    return array;  
-}  
-console.log(bubbleSort([5, 1, 0, 15, -2, 3, 7]));
+//     var length = array.length;
+//     var stop;
+//     for (var i=0; i < length; i++){  
+//         for (var j=0, stop=length-i; j < stop; j++){  
+//             if (array[j] > array[j+1]){  
+//                 swap(array, j, j+1);  
+//             }  
+//         }  
+//     }  
+//     return array;  
+// }  
+// console.log(bubbleSort([5, 1, 0, 15, -2, 3, 7]));
+
+
+function bubbleSort(items){
+	var length = items.length;
+	for(let i = 0; i< length; i++){
+		var sorted = true;
+		for(let j = 0; j<(length - i); j++){
+			// compare current spot with next spot
+			if(items[j]>items[j+1]){
+				sorted = false; //we had to switch 2 numbers, not sure if list is sorted anymore
+				// swap numbers
+				var temp = items[j];
+				items[j] = items[j+1];
+				items[j+1] = temp
+			}
+		}
+		if(sorted){
+			// break; stop the outer loop because we didnt' swap anything on this pass
+		}
+	}
+	console.log(items)
+}
+
+bubbleSort([1,2,5,4,3,6])
 
 </script>
